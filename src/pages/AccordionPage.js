@@ -1,7 +1,7 @@
 import React from 'react'
 import Accordion from '../components/Accordion'
 
-const App = () => {
+const AccordionPage = () => {
   const items = [
     {
       id:23131,
@@ -25,4 +25,4 @@ const App = () => {
   )
 }
 
-export default App
+export default AccordionPage;
