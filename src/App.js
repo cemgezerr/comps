@@ -9,13 +9,13 @@ const App = () => {
     setSelection(option);
   }
   const option = [
-     {label:'Red', value:'red'},
+    {label:'Red', value:'red'},
     {label:'Green', value:'green'},
     {label:'Blue', value:'blue'}
 
   ]
   return (
-    <div><DropDown option={option} selection={selection} onSelect={handleSelection}/></div>
+    <div><DropDown option={option} value={selection} onChange={handleSelection}/></div>
   )
 }
 
