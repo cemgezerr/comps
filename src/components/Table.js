@@ -2,6 +2,9 @@ import React from 'react'
 
 const Table = ({ data, config, keyFn }) => {
     const renderedHeader = config.map((column) => {
+        if(column.header){
+            return column.header();
+        }
         return <th key={column.label}>{column.label}</th>
     })
     const renderedRows = data.map((rowData) => {

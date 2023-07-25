@@ -12,7 +12,7 @@ const TablePage = () => {
     const config = [
         { label:'Name', render:(fruit) => fruit.name},
         { label:'Color', render:(fruid)=> <div className={`p-3 m-2 ${fruid.color}`}/>},
-        { label:'Score', render:(fruid)=> fruid.score},
+        { label:'Score', render:(fruid)=> fruid.score , header:() => <th  className='bg-red-500'>Score</th>},
     ]
 
     const keyFn = (fruit) => {
