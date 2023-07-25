@@ -10,13 +10,17 @@ const TablePage = () => {
         { name: 'Lime', color: 'bg-green-500', score: 4 },
     ]
     const config = [
-        { label:'Fruits'},
-        { label:'Color'},
-        { label:'Score'},
+        { label:'Name', render:(fruit) => fruit.name},
+        { label:'Color', render:(fruid)=> <div className={`p-3 m-2 ${fruid.color}`}/>},
+        { label:'Score', render:(fruid)=> fruid.score},
     ]
 
+    const keyFn = (fruit) => {
+      return fruit.name
+    } 
+
     return (
-        <div><Table data={data} config={config}/></div>
+        <div><Table data={data} config={config} keyFn={keyFn}/></div>
     )
 }
 
