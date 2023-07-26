@@ -1,5 +1,6 @@
 import React from 'react'
-import Table from '../components/Table'
+// import Table from '../components/Table'
+import SorttableTable from '../components/SorttableTable'
 
 const TablePage = () => {
 
@@ -10,9 +11,9 @@ const TablePage = () => {
         { name: 'Lime', color: 'bg-green-500', score: 4 },
     ]
     const config = [
-        { label:'Name', render:(fruit) => fruit.name},
-        { label:'Color', render:(fruid)=> <div className={`p-3 m-2 ${fruid.color}`}/>},
-        { label:'Score', render:(fruid)=> fruid.score , header:() => <th  className='bg-red-500'>Score</th>},
+        { label:'Name', render:(fruit) => fruit.name,sortValue:(fruit)=> fruit.name},
+        { label:'Color', render:(fruit)=> <div className={`p-3 m-2 ${fruit.color}`}/>},
+        { label:'Score', render:(fruit)=> fruit.score , sortValue:(fruit)=> fruit.score},
     ]
 
     const keyFn = (fruit) => {
@@ -20,7 +21,7 @@ const TablePage = () => {
     } 
 
     return (
-        <div><Table data={data} config={config} keyFn={keyFn}/></div>
+        <div><SorttableTable data={data} config={config} keyFn={keyFn}/></div>
     )
 }
 
